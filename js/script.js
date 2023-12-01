@@ -15,8 +15,6 @@
 // E ricordiamoci che console.log() è nostro amico!
 
 
-// MILESTONE 0:
-// Creare l’array di oggetti con le informazioni fornite.
 
 const teamMembers = [
     {
@@ -49,39 +47,38 @@ const teamMembers = [
         "ruolo": "Graphic Designer",
         "foto": "img/barbara-ramos-graphic-designer.jpg",
     },
-
 ];
-
 
 // MILESTONE 1:
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 
 // versione con ciclo for in 
-
 for (let member in teamMembers){
-    console.log (teamMembers[member]);
-    let memberOfOurTeam = (teamMembers[member]);
+    console.log(teamMembers[member]);
 }
-
-// console.log(("Questo è un singolo membro del team"), teamMembers [0]);
-
-
 
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sotto forma di stringhe
 
-// creo una const che contenga l'elemente padre
+// creo una const che contenga l'elemento padre
+const teamContainer = document.querySelector("div.container");
 
-const team = document.querySelector ("div.container");
-console.log (team);
+// creo un ciclo for per stampare gli elementi dell'array dentro a un div che andrà dentro div.container
+for (let i = 0; i < teamMembers.length; i++) {
+    // Creo un div per ogni membro del team
+    const memberDiv = document.createElement("div");
+    memberDiv.classList.add("Member");
 
-const peopleOfTheTeam = document.createElement ("div")
+    // Creo un paragrafo con le informazioni del membro
+    const memberInfo = document.createElement("p");
+    memberInfo.textContent = `Nome: ${teamMembers[i].nome}, Ruolo: ${teamMembers[i].ruolo}`;
 
-div.append ("Membro del Team", teamMembers);
+    // Aggiungo il paragrafo al div del membro
+    memberDiv.appendChild(memberInfo);
 
-
-
-// Ottengo la stringa di un singolo membro del Team
+    // Aggiungo il div del membro al contenitore del team
+    teamContainer.appendChild(memberDiv);  
+}
 
 
 
