@@ -52,3 +52,38 @@ const teamMembers = [
 
 ];
 
+
+// MILESTONE 1:
+// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+
+// versione con ciclo for in 
+
+for (let member in teamMembers){
+    console.log (teamMembers[member]);
+    let memberOfOurTeam = (teamMembers[member]);
+}
+
+// console.log(("Questo è un singolo membro del team"), teamMembers [0]);
+
+
+
+// MILESTONE 2:
+// Stampare le stesse informazioni su DOM sotto forma di stringhe
+
+// creo una const che contenga l'elemente padre
+
+const team = document.querySelector ("div.container");
+console.log (team);
+
+const peopleOfTheTeam = document.createElement ("div")
+
+div.append ("Membro del Team", teamMembers);
+
+
+
+// Ottengo la stringa di un singolo membro del Team
+
+
+
+
+
